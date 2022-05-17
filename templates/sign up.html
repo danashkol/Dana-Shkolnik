@@ -5,42 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../static/Ex_2.css">
+    <script src="../static/ex2_js.js"></script>
 </head>
-<body>
-   
-    <style>
-        header {text-align: center;}
-        form {text-align: center;}
-    </style>
+<body class="bodySignUp" onload="markOnNav()">
+    <nav class="navi">
+        <li><a href="home page.html">Home Page</a></li>
+        <li><a href="sign up.html">Go To Order</a></li>
+    </nav>
     <header>
-        <div style= "color:palevioletred; font-size: 40px; margin: 15px" > Dana's cookies shop</div>
+        <div id="header">Dana's cookies shop</div>
     </header>
-
-    <form action="../templates/home page.html" style="margin: 5px;">
-        <h3 style="color: pink;">Order details </h3>
-        <label for="cookies">Choose cookie</label><br>
-        <select name="cookie" id="cookies" required>
-            <option value="chocolate chip">chocolate chip</option>
-            <option value="peanut butter">peanut butter</option>
-            <option value="kinder">kinder</option>
-            <option value="amsterdam">amsterdam</option>
-            <option value="nutella">nutella</option>
-        </select><br>
-        <label for="Amount">Amount</label><br>
-        <input type="number" name="Amount" id="Amount" min="1" max="9" required><br> 
-        <label for="date">Order date</label><br>
-        <input type="datetime-local" required><br>
-        <h3 style="color: pink;">contact details</h3>
-        <label for="Full name">Full name</label><br> 
-        <input type="text" id="Full name" name="Full name" required><br>
-        <label for="Email">Email</label><br>
-        <input type="Email" id="Email" name="Email"><br>
-        <label for="Phone number"> Phone number</label><br>
-        <input type="Phone number" name="Phone number" id="Phone number" minlength="10" maxlength="10" required><br>
-        <label for="agree">I agree to terms</label>
-        <input type="checkbox" id="agree" name="agree" required><br>
-        <br>
-        <input type="submit">
+    <form class="order" action="../templates/home page.html">
+        <div class="orderDetails">
+            <h3 id= "h3">Order Details </h3>
+            <label for="cookies">Choose cookie</label><br>
+            <select name="cookie" id="cookies" onchange="calc()" required>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="4">chocolate chip</option>
+                <option value="5">peanut butter</option>
+                <option value="5">kinder</option>
+                <option value="5.5">amsterdam</option>
+                <option value="4.5">nutella</option>
+            </select><br>
+            <label for="Amount">Amount</label><br>
+            <input type="number" name="Amount" id="Amount" min="1" max="9" oninput="calc()" required><br> 
+            <label for="date">Order date</label><br>
+            <input type="datetime-local" name="date" id="date" required><br>
+        </div>
+        <div class="contactDetails">
+            <h3 id= "h3">Contact Details</h3>
+            <label for="Full name">Full name</label><br> 
+            <input type="text" id="Full name" name="Full name" required><br>
+            <label for="Email">Email</label><br>
+            <input type="Email" id="Email" name="Email"><br>
+            <label for="Phone number"> Phone number</label><br>
+            <input type="Phone number" name="Phone number" id="Phone number" minlength="10" maxlength="10" required>
+        </div>
+        <div class="bottom">
+            <label for= "total" >Total Price:</label>
+            <input class="total" name="total" id="total" type="text" readonly><br>
+            <label for="agree">I agree to terms</label>
+            <input type="checkbox" id="agree" name="agree" required><br><br>
+            <button id="btn">Done</button>
+        </div>
     </form>
 </body>
 </html>

@@ -5,24 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../static/Ex_2.css">
+    <script src="../static/ex2_js.js"></script>
 </head>
-<body>
-    <style>
-        header {text-align: center;}
-        p {text-align: center;}
-        nav {text-align: center;}
-
-    </style>
+<body class="bodyHome" onload="changeByOpeningHours(), markOnNav()">
+    <nav class="navi">
+        <li><a href="home page.html">Home Page</a></li>
+        <li><a href="sign up.html">Go To Order</a></li>
+    </nav>
     <header>
-        <div style= "color:palevioletred; font-size: 40px; margin: 15px" > Dana's cookies shop</div>
+        <div id="header">Dana's cookies shop</div>
     </header>
-    <p style="margin: 5px;">
-        <img src="../static/welcome cookies.jpg" alt="welcome"><br>
-        <span style="color: pink; font-size: 20px;"> welcome to Dana's cookies shop <br> press 'go to order' to make an order
-        </span><br>
-        <nav>
-            <a href="../templates/sign up.html">go to order</a>
-        </nav>
-    </p>
+    <div class="text">
+        <h1 id="first">Welcome to</h2>
+        <h1 id="animation"> Dana's cookies shop</h2>
+        <h1 id="second"> Press 'Go To Order' to make an order</h2><br>
+        <label for="open" id="hours">Opening Hours: 10:00 - 20:00</label><br><br>
+        <label id="open"></label>
+    </div>
 </body>
 </html>
